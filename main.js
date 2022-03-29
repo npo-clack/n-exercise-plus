@@ -8,6 +8,13 @@ function execount() {
 function showexecount() {
   const timeElement = document.getElementById("keyboardinput");
   timeElement.innerText = execount();
+
+  // 書き方はいろいろ、isRedみたいなフラグを保持してもよい
+  if (counter % 2 == 0) {
+    timeElement.className = "red";
+  } else {
+    timeElement.className = "blue";
+  }
 }
 
 // setInterval(showexecount, 1000);
