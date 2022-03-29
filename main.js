@@ -5,10 +5,18 @@ function execount() {
   return counter;
 }
 
-function showexecount() {
-  const timeElement = document.getElementById("keyboardinput");
-  timeElement.innerText = execount();
+function showexecount(event) {
+  let inputKey;
+  if(event.key) {
+    inputKey = event.key;
+  } else {
+    inputKey = event.target.innerText;
+  }
 
+  const timeElement = document.getElementById("keyboardinput");
+  timeElement.innerText = inputKey;
+
+  execount(); //下記の判定のためにカウントする必要がある
   // 書き方はいろいろ、isRedみたいなフラグを保持してもよい
   if (counter % 2 == 0) {
     timeElement.className = "red";
@@ -32,10 +40,13 @@ console.log(wordgame.evaluation("apple"));
 
 function showalphabet() {
   const virtualKyboard = document.getElementById("virtualkeyboard");
-  const aCharCode = 'A'.charCodeAt(0);
+  const aCharCode = 'a'.charCodeAt(0);
   for (let i = aCharCode; i < aCharCode + 26; i++) {
     const letter = String.fromCharCode(i);
-    virtualKyboard.innerText += letter;
+    const childButton = document.createElement("button");
+    childButton.innerText = letter;
+    childButton.onclick = showexecount;
+    virtualKyboard.appendChild(childButton);
   }
 }
 
