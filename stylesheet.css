@@ -42,7 +42,14 @@ h1 {
   font-size: 32px;
 }
 
+.result-hidden {
+  visibility: hidden;
+  font-size: 60px;
+  margin: 200px;
+}
+
 .result {
+  visibility: visible;
   font-size: 60px;
   margin: 200px;
 }
