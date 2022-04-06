@@ -11,7 +11,7 @@ questionElement.innerText = wordgame.question;
 
 let inputKeys = "";
 
-function showexecount(event) {
+function showExeCount(event) {
   let inputKey;
   if (event.key) {
     inputKey = event.key;
@@ -58,29 +58,29 @@ function showexecount(event) {
   timeElement.innerText = inputKeys;
 }
 
-// setInterval(showexecount, 1000);
-document.onkeydown = showexecount;
+// setInterval(showExeCount, 1000);
+document.onkeydown = showExeCount;
 
-function showalphabet() {
+function showAlphabet() {
   const virtualKyboard = document.getElementById("virtualkeyboard");
   const aCharCode = 'a'.charCodeAt(0);
   for (let i = aCharCode; i < aCharCode + 26; i++) {
     const letter = String.fromCharCode(i);
     const childButton = document.createElement("button");
     childButton.innerText = letter;
-    childButton.onclick = showexecount;
+    childButton.onclick = showExeCount;
     virtualKyboard.appendChild(childButton);
   }
 
   const enterButton = document.createElement("button");
   enterButton.innerText = "Enter";
-  enterButton.onclick = showexecount;
+  enterButton.onclick = showExeCount;
   virtualKyboard.appendChild(enterButton);
 
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
-  deleteButton.onclick = showexecount;
+  deleteButton.onclick = showExeCount;
   virtualKyboard.appendChild(deleteButton);
 }
 
-showalphabet();
+showAlphabet();
