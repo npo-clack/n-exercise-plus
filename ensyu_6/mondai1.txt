@@ -1,0 +1,24 @@
+以下のプログラムの定数a, b の数字を変えてみてどういったときにconsole.log()が実行されるか見てみよう
+
+let a = parseInt(prompt('数字を入力してください'));
+let b = parseInt(prompt('数字を入力してください'));
+
+if (a > b) {
+    console.log("a > b : true");
+} 
+
+if (a < b) {
+    console.log("a < b : true");
+}
+
+if (a <= b) {
+    console.log("a <= b : true");
+}
+
+if (a >= b) {
+    console.log("a >= b : true");
+}
+
+if (a === b) {
+    console.log("a === b : true");
+}

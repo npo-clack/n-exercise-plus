@@ -1,0 +1,25 @@
+以下のプログラムを実行して、実行結果をよく見てみましょう。
+
+let a = true;
+let b = true;
+let c = false;
+
+if (a && b) {
+console.log("a && b : true");
+}
+
+if (a && c) {
+console.log("a && c : true");
+}
+
+if (a || b) {
+    console.log("a || c : true");
+}
+
+if (a || c) {
+    console.log("a || c : true");
+}
+
+if (!a) {
+    console.log("!a: true");
+}
