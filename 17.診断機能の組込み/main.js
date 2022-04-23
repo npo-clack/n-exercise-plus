@@ -1,22 +1,14 @@
 let counter = 0;
 
-function execount() {
+function exeCount() {
   counter++;
   return counter;
 }
 
-function showexecount(event) {
-  let inputKey;
-  if(event.key) {
-    inputKey = event.key;
-  } else {
-    inputKey = event.target.innerText;
-  }
-
+function showExeCount(event) {
   const timeElement = document.getElementById("keyboardinput");
-  timeElement.innerText = inputKey;
+  timeElement.innerText = exeCount();;
 
-  execount(); //下記の判定のためにカウントする必要がある
   // 書き方はいろいろ、isRedみたいなフラグを保持してもよい
   if (counter % 2 == 0) {
     timeElement.className = "red";
@@ -25,8 +17,8 @@ function showexecount(event) {
   }
 }
 
-// setInterval(showexecount, 1000);
-document.onkeydown = showexecount;
+// setInterval(showExeCount, 1000);
+document.onkeydown = showExeCount;
 
 const wordgame = {
   question: "りんごの英単語は？",
@@ -38,16 +30,16 @@ const wordgame = {
 
 console.log(wordgame.evaluation("apple"));
 
-function showalphabet() {
+function showAlphabet() {
   const virtualKyboard = document.getElementById("virtualkeyboard");
   const aCharCode = 'a'.charCodeAt(0);
   for (let i = aCharCode; i < aCharCode + 26; i++) {
     const letter = String.fromCharCode(i);
     const childButton = document.createElement("button");
     childButton.innerText = letter;
-    childButton.onclick = showexecount;
+    childButton.onclick = showExeCount;
     virtualKyboard.appendChild(childButton);
   }
 }
 
-showalphabet();
+showAlphabet();

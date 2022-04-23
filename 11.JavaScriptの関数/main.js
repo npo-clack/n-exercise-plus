@@ -1,13 +1,13 @@
 let counter = 0;
 
-function execount() {
+function exeCount() {
   counter++;
   return counter;
 }
 
-function showexecount() {
+function showExeCount() {
   const timeElement = document.getElementById("time");
-  timeElement.innerText = execount();
+  timeElement.innerText = exeCount();
 }
 
-setInterval(showexecount, 1000);
+setInterval(showExeCount, 1000);
