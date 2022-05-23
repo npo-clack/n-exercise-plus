@@ -6,7 +6,7 @@ function exeCount() {
 }
 
 function showExeCount() {
-  const timeElement = document.getElementById("time");
+  let timeElement = document.getElementById("time");
   timeElement.innerText = exeCount();
 }
 

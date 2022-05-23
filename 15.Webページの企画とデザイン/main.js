@@ -6,7 +6,7 @@ function exeCount() {
 }
 
 function showExeCount() {
-  const timeElement = document.getElementById("keyboardinput");
+  let timeElement = document.getElementById("keyboardinput");
   timeElement.innerText = exeCount();
 
   // 書き方はいろいろ、isRedみたいなフラグを保持してもよい
@@ -20,7 +20,7 @@ function showExeCount() {
 // setInterval(showExeCount, 1000);
 document.onkeydown = showExeCount;
 
-const wordgame = {
+let wordgame = {
   question: "りんごの英単語は？",
   correct: "apple",
   evaluation: function (answer) {
