@@ -10,14 +10,13 @@ function showExeCount() {
   timeElement.innerText = exeCount();
 }
 
-// setInterval(showExeCount, 1000);
 document.onkeydown = showExeCount;
 
 let wordgame = {
   question: "りんごの英単語は？",
   correct: "apple",
   evaluation: function (answer) {
-    return this.correct == answer;
+    return wordgame.correct == answer;
   }
 };
 
