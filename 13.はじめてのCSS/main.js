@@ -7,7 +7,8 @@ function exeCount() {
 
 function showExeCount() {
   let timeElement = document.getElementById("keyboardinput");
-  timeElement.innerText = exeCount();
+  counter++;
+  timeElement.innerText = counter;
 }
 
 document.onkeydown = showExeCount;

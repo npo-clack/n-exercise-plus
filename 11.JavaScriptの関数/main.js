@@ -1,12 +1,8 @@
 let counter = 0;
 
-function exeCount() {
-  counter++;
-  return counter;
-}
-
 function showExeCount() {
   let timeElement = document.getElementById("time");
+  counter++;
   timeElement.innerText = exeCount();
 }
 

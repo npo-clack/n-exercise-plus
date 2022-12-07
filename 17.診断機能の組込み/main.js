@@ -1,15 +1,11 @@
 let counter = 0;
 
-function exeCount() {
-  counter++;
-  return counter;
-}
-
 function showExeCount() {
-  const timeElement = document.getElementById("keyboardinput");
-  timeElement.innerText = exeCount();
+  let timeElement = document.getElementById("keyboardinput");
+  counter++;
+  timeElement.innerText = counter;
 
-  // 書き方はいろいろ、isRedみたいなフラグを保持してもよい
+  // counterが2で割り切れるかどうかで、偶数か奇数かを判定する。
   if (counter % 2 == 0) {
     timeElement.className = "red";
   } else {
@@ -19,7 +15,7 @@ function showExeCount() {
 
 document.onkeydown = showExeCount;
 
-const wordgame = {
+let wordgame = {
   question: "りんごの英単語は？",
   correct: "apple",
   evaluation: function (answer) {
